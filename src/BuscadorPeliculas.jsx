@@ -4,4 +4,4 @@ export const BuscadorPeliculas = () => {
             Buscador de Películas
             </div>
             );
-        }      
+        }    
