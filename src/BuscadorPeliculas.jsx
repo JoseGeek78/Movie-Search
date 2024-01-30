@@ -1,6 +1,6 @@
 export const BuscadorPeliculas = () => {
         return (
-            <div>
+            <div className="container">
             Buscador de Películas
             </div>
             );
