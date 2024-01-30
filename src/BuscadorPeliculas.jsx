@@ -4,6 +4,10 @@ export const BuscadorPeliculas = () => {
 
         const[busqueda, setbusqueda] = useState('')
 
+        const handleInputChange = (e) => {
+            setbusqueda(e.target.value)
+        }
+
         return (
             <div className="container">
 
@@ -11,6 +15,8 @@ export const BuscadorPeliculas = () => {
             <form>
                 <input type="text"
                 placeholder="Escribir un película"
+                value={busqueda}
+                onChange={handleInputChange}
                 />
                 <button type="submit" className="search-button">Buscar</button>
             </form>
