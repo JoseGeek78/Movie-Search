@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 export const BuscadorPeliculas = () => {
+
+        const[pelicula, setPelicula] = useState('')
+
         return (
             <div className="container">
 
