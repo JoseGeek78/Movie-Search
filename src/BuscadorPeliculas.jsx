@@ -9,7 +9,7 @@ export const BuscadorPeliculas = () => {
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  ;
+  fetchPeliculas();
 };
 
   return (
