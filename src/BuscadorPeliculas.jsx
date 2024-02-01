@@ -1,7 +1,12 @@
 import { useState } from "react";
 
 export const BuscadorPeliculas = () => {
-  const [busqueda, setbusqueda] = useState("");
+
+  const urlBase = 'https://api.themoviedb.org/3/search/movie'
+  const API_KEY = 'INSERT_YOUR_API_KEY'
+
+  const [busqueda, setBusqueda] = useState("");
+  const [peliculas, setPeliculas] = useState([]);
 
   const handleInputChange = (e) => {
     setbusqueda(e.target.value);
@@ -11,6 +16,17 @@ const handleSubmit = (e) => {
   e.preventDefault();
   fetchPeliculas();
 };
+
+const fetchPeliculas = async () => {
+    try {
+      const response = await fetch(`${urlBase}?query=${busqueda}&api_key=${API_KEY}`)
+      const data = await response.json()
+      console.log(data.results)
+      setPeliculas(data.results)
+    } catch (error) {
+      console.error('Ha ocurrido un error: ', error)
+    }
+  }
 
   return (
     <div className="container">
