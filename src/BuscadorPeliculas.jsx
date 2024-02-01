@@ -7,6 +7,11 @@ export const BuscadorPeliculas = () => {
     setbusqueda(e.target.value);
   };
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+  ;
+};
+
   return (
     <div className="container">
       <h1 className="title">Buscador de Películas</h1>
